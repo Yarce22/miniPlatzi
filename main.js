@@ -27,3 +27,25 @@ const juanita = new Student(
         'Curso de creacion de personajes'
     ]
 );
+
+// prototipos con la sintaxis de clase
+class Student2 {
+    constructor (name, age, cursosAprobados) {
+        this.name = name;
+        this.age = age;
+        this.cursosAprobados = cursosAprobados;
+    }
+
+    aprpobarCurso(nuevoCurso) {
+        this.cursosAprobados.push(nuevoCurso);
+    }
+}
+
+const miguel = new Student2(
+    'Miguel', 
+    28, 
+    [
+        'Curso de analisis de negocios para ciencias de datos',
+        'curso de principios de visualizacion de datos para BI'
+    ]
+);
