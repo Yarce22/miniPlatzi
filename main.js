@@ -4,15 +4,15 @@ class Comment {
         studentName,
         studentRole = 'estudiante',
     }) {
-        this.constent = content;
+        this.content = content;
         this.studentName = studentName;
         this.studentRole = studentRole;
-        this.liles = 0
+        this.likes = 0
     }
 
-    PublicKeyCredential() {
-        console.log(this.studentName + '(' + this.studentRole +')');
-        console.log(this.likes + ' likes');
+    publicar() {
+        console.log(`${this.studentName} (${this.studentRole})`);
+        console.log(`${this.likes} likes`);
         console.log(this.content);
     }
 }
@@ -141,11 +141,11 @@ class Student {
     }
 
     publicarComentario(commentContent) {
-        const cooment = new Comment ({
+        const coment = new Comment ({
             content: commentContent,
             studentName: this.name,
         }) ;
-        cooment.publicar();
+        coment.publicar();
     }
 }
 
@@ -185,6 +185,7 @@ class ExpertStudent extends Student {
             this.approveCourse.push(newCourse);
     }
 }
+
 class TeacherStudent extends Student {
     constructor(props) {
         super(props);
