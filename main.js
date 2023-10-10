@@ -1,3 +1,22 @@
+class Comment {
+    constructor({
+        content,
+        studentName,
+        studentRole = 'estudiante',
+    }) {
+        this.constent = content;
+        this.studentName = studentName;
+        this.studentRole = studentRole;
+        this.liles = 0
+    }
+
+    PublicKeyCredential() {
+        console.log(this.studentName + '(' + this.studentRole +')');
+        console.log(this.likes + ' likes');
+        console.log(this.content);
+    }
+}
+
 function videoPlay (id) {
     const urlSecreta = 'https://urlsecretadelvideo.com' + id;
     console.log('Se esta reporduciento el video ' + urlSecreta);
@@ -120,6 +139,14 @@ class Student {
         this.approvedCourses = approvedCourses;
         this.learningPaths = learningPaths
     }
+
+    publicarComentario(commentContent) {
+        const cooment = new Comment ({
+            content: commentContent,
+            studentName: this.name,
+        }) ;
+        cooment.publicar();
+    }
 }
 
 class FreeStudent extends Student {
@@ -149,13 +176,31 @@ class BasicStudent extends Student {
     }
 }
 
-class EspertStudent extends Student {
+class ExpertStudent extends Student {
     constructor(props) {
         super(props);
     }
 
     approveCourse(newCourse) {
             this.approveCourse.push(newCourse);
+    }
+}
+class TeacherStudent extends Student {
+    constructor(props) {
+        super(props);
+    }
+
+    approveCourse(newCourse) {
+            this.approveCourse.push(newCourse);
+    }
+
+    publicarComentario(commentContent) {
+        const cooment = new Comment ({
+            content: commentContent,
+            studentName: this.name,
+            studentRole: 'Profesor'
+        }) ;
+        cooment.publicar();
     }
 }
 
@@ -179,4 +224,11 @@ const miguelito = new BasicStudent ({
         escuelaWeb,
         escuelaDesign
     ]
+});
+
+const freddy = new TeacherStudent ({
+    name: 'Freddy Vega',
+    username: 'freddier',
+    email: 'f@gep.com',
+    instagram: 'freddiervega'
 });
