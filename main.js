@@ -196,12 +196,12 @@ class TeacherStudent extends Student {
     }
 
     publicarComentario(commentContent) {
-        const cooment = new Comment ({
+        const coment = new Comment ({
             content: commentContent,
             studentName: this.name,
             studentRole: 'Profesor'
         }) ;
-        cooment.publicar();
+        coment.publicar();
     }
 }
 
